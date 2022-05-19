@@ -1,21 +1,21 @@
-package org.example.dominio;
+package org.example.domain;
 
 import java.util.ArrayList;
 
-public class Cliente {
+public class Client {
 
-    private String nome;
+    private String name;
     private User user;
     private ArrayList<Account> account;
 
-    public Cliente(String nome, User user, ArrayList<Account> account) {
-        this.nome = nome;
+    public Client(String name, User user, ArrayList<Account> account) {
+        this.name = name;
         this.user = user;
         this.account = new ArrayList<>();
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public User getUser() {

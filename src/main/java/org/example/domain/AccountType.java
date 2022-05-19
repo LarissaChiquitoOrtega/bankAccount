@@ -1,4 +1,4 @@
-package org.example.dominio;
+package org.example.domain;
 
 public enum AccountType {
 

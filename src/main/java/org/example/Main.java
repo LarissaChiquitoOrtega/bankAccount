@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.screen.CreateAccount;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +11,7 @@ public class Main {
         System.out.println("Bem-vindo ao banco Didi");
 
         int op = s.nextInt();
+        s.nextLine();
         do{
             System.out.println("O que deseja realizar?");
             System.out.println("01 - Criar uma nova conta \n");
@@ -18,6 +21,12 @@ public class Main {
 
             switch (op){
                 case 1:
+                    CreateAccount createAccount = new CreateAccount();
+                    createAccount.executar(s);
+                    break;
+                case 2:
+                    break;
+                case 3:
                     break;
                 default:
                     System.out.println("Opção inválida, escolha novamente!");

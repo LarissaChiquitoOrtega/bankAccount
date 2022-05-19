@@ -1,19 +1,18 @@
-package org.example.dominio;
+package org.example.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 public class Account {
     private String accountNumber; //numero da conta é gerado
-    private String agency;
+    private String branch; // agência bancária
     private AccountType accounttype;
 
-    public Account(String numberAccount, String agency, AccountType accounttype) {
+    public Account(String numberAccount, String branch, AccountType accounttype) {
         this.accountNumber = numberAccount;
-        this.agency = agency;
+        this.branch = branch;
         this.accounttype = accounttype;
     }
 
@@ -21,16 +20,12 @@ public class Account {
         return accountNumber;
     }
 
-    public String getAgency() {
-        return agency;
+    public String getBranch() {
+        return branch;
     }
 
     public AccountType getAccounttype() {
         return accounttype;
-    }
-
-    public void setAccounttype(AccountType accounttype) {
-        this.accounttype = accounttype;
     }
 
 
@@ -54,14 +49,6 @@ public class Account {
     public ArrayList<BigDecimal> extrato(LocalDate dateStart, LocalDate dateEnd){
         return (ArrayList<BigDecimal>) Arrays.asList(BigDecimal.ZERO);
     }
-//único método estático,
-// por isso a minha variável da classe criar conta consegue acessá-lo sem que a classe Conta seja instanciada
-//contexto estático, quer dizer que eu posso fazer uso sem instanciar um objeto, não preciso criar um objeto.
-    public static Account criarConta(Cliente cliente, AccountType accounttype, String agency){
-        String accountNumber = String.format("%04d", new Random().nextInt());
-        Account account = new Account(accountNumber, agency, accounttype);
-        cliente.addConta(account);
-        return account;
-    }
+
 
 }
